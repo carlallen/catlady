@@ -14,10 +14,26 @@ module Catlady
     end
 
     def build
-      uuid=`grep UUID -A1 -a #{profile_file} | grep -o "[-A-Z0-9]\{36\}"`
-      FileUtils.mv(profile_file,
-                   File.expand_path("~/Library/MobileDevice/Provisioning\ Profiles/#{uuid}.mobileprovision"))
+      increment_version
       `xcodebuild -scheme "#{@scheme}" -configuration #{@configuration} -sdk #{@sdk} archive PROVISIONING_PROFILE="#{uuid}"`
+    end
+
+
+    def increment_version
+      app_info = Plist::parse_xml("AppInfo.plist")
+      app_info["CFBundleVersion"] = (app_info["CFBundleVersion"].to_i + 1).to_s
+      Plist::Emit.save_plist(app_info, "AppInfo.plist")
+    end
+
+    def uuid
+      @uuid ||= install_provision_profile
+    end
+
+    def install_provision_profile
+      pp_uuid=`grep UUID -A1 -a #{profile_file} | grep -o "[-A-Z0-9]\{36\}"`
+      FileUtils.mv(profile_file,
+                   File.expand_path("~/Library/MobileDevice/Provisioning\ Profiles/#{pp_uuid}.mobileprovision"))
+      pp_uuid
     end
 
     def agent

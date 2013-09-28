@@ -5,8 +5,9 @@ require 'terminal-table'
 require 'term/ansicolor'
 
 require 'cupertino'
-
 require 'cupertino/provisioning_portal'
+
+require 'plist'
 
 
 module Catlady

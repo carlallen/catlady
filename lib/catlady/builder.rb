@@ -10,13 +10,14 @@ module Catlady
       @distribution = distribution
       @configuration = config["configuration"]
       @sdk = config["sdk"]
+      @scheme = config["scheme"]
     end
 
     def build
       uuid=`grep UUID -A1 -a #{profile_file} | grep -o "[-A-Z0-9]\{36\}"`
       FileUtils.mv(profile_file,
                    File.expand_path("~/Library/MobileDevice/Provisioning\ Profiles/#{uuid}.mobileprovision"))
-      `xcodebuild -configuration #{@configuration} -sdk #{@sdk} PROVISIONING_PROFILE="#{uuid}"`
+      `xcodebuild -scheme "#{@scheme}" -configuration #{@configuration} -sdk #{@sdk} archive PROVISIONING_PROFILE="#{uuid}"`
     end
 
     def agent

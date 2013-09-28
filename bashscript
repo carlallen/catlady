@@ -1,0 +1,7 @@
+#!/bin/bash
+
+CONFIGURATION="AdHoc-DebugDistribution"
+SDK="iphoneos"
+PROFILE_PATH="/Users/jkp/Desktop/foo.mobileprovision"
+
+xcodebuild -configuration ${CONFIGURATION} -sdk ${SDK} PROVISIONING_PROFILE="$PROVISIONING_PROFILE"

@@ -1,0 +1,87 @@
+PATH
+  remote: .
+  specs:
+    catlady (0.0)
+
+PATH
+  remote: ../cupertino
+  specs:
+    cupertino (0.8.1)
+      certified (>= 0.1.0)
+      mechanize (~> 2.5.1)
+      security (~> 0.1.2)
+      shenzhen (>= 0.0.1)
+      term-ansicolor (~> 1.0.7)
+      terminal-table (~> 1.4.5)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    certified (0.1.1)
+    columnize (0.3.6)
+    commander (4.1.5)
+      highline (~> 1.6.11)
+    debugger (1.6.2)
+      columnize (>= 0.3.1)
+      debugger-linecache (~> 1.2.0)
+      debugger-ruby_core_source (~> 1.2.3)
+    debugger-linecache (1.2.0)
+    debugger-ruby_core_source (1.2.3)
+    diff-lcs (1.2.4)
+    domain_name (0.5.13)
+      unf (>= 0.0.5, < 1.0.0)
+    dotenv (0.9.0)
+    faraday (0.8.8)
+      multipart-post (~> 1.2.0)
+    faraday_middleware (0.9.0)
+      faraday (>= 0.7.4, < 0.9)
+    highline (1.6.19)
+    json (1.8.0)
+    mechanize (2.5.1)
+      domain_name (~> 0.5, >= 0.5.1)
+      mime-types (~> 1.17, >= 1.17.2)
+      net-http-digest_auth (~> 1.1, >= 1.1.1)
+      net-http-persistent (~> 2.5, >= 2.5.2)
+      nokogiri (~> 1.4)
+      ntlm-http (~> 0.1, >= 0.1.1)
+      webrobots (~> 0.0, >= 0.0.9)
+    mime-types (1.25)
+    mini_portile (0.5.1)
+    multipart-post (1.2.0)
+    net-http-digest_auth (1.4)
+    net-http-persistent (2.9)
+    nokogiri (1.6.0)
+      mini_portile (~> 0.5.0)
+    ntlm-http (0.1.1)
+    rake (10.1.0)
+    rspec (2.14.1)
+      rspec-core (~> 2.14.0)
+      rspec-expectations (~> 2.14.0)
+      rspec-mocks (~> 2.14.0)
+    rspec-core (2.14.5)
+    rspec-expectations (2.14.3)
+      diff-lcs (>= 1.1.3, < 2.0)
+    rspec-mocks (2.14.3)
+    security (0.1.2)
+    shenzhen (0.4.0)
+      commander (~> 4.1)
+      dotenv (~> 0.7)
+      faraday (~> 0.8)
+      faraday_middleware (~> 0.9)
+      json (~> 1.8)
+    term-ansicolor (1.0.7)
+    terminal-table (1.4.5)
+    unf (0.1.2)
+      unf_ext
+    unf_ext (0.0.6)
+    webrobots (0.1.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  catlady!
+  cupertino!
+  debugger
+  rake
+  rspec

@@ -33,7 +33,7 @@ module Catlady
     end
 
     def profile_file
-      @profile_file = agent.download_profile(profile)
+      @profile_file ||= agent.download_profile(profile)
     end
   end
 end
